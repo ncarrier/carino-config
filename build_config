@@ -1,5 +1,5 @@
 # directories holding produced files, which can be removed safely
-OUT_DIR=./out
+OUT_DIR=${PWD}/out
 BUILD_DIR=${OUT_DIR}/build
 STAGING_DIR=${OUT_DIR}/staging
 FINAL_DIR=${OUT_DIR}/final
@@ -7,8 +7,8 @@ BOOT_DIR=${OUT_DIR}/boot
 UBOOT_DIR=${OUT_DIR}/uboot
 
 # source directories
-CONFIG_DIR=./config
-PACKAGES_DIR=./packages
-BUILD_SCRIPTS_DIR=./build_scripts
+CONFIG_DIR=${PWD}/config
+PACKAGES_DIR=${PWD}/packages
+BUILD_SCRIPTS_DIR=${PWD}/build_scripts
 
 TOOLCHAIN_PREFIX=arm-linux-gnueabihf-
