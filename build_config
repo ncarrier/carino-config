@@ -4,7 +4,7 @@ BUILD_DIR=${OUT_DIR}/build
 STAGING_DIR=${OUT_DIR}/staging
 FINAL_DIR=${OUT_DIR}/final
 BOOT_DIR=${OUT_DIR}/boot
-UBOOT_DIR=${OUT_DIR}/uboot
+U_BOOT_DIR=${OUT_DIR}/u-boot
 
 # source directories
 CONFIG_DIR=${PWD}/config
