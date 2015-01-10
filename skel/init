@@ -2,6 +2,8 @@
 
 mount -a
 
+hostname carino
+
 while [ 1 ]; do
 	/bin/sh -l
 	sleep 1
