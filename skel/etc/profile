@@ -1,7 +1,8 @@
 PATH="$PATH:/sbin:/bin:/usr/bin"
 PS1="[\u@\h \W]\\$ "
+HOME=/
 
-export PATH PS1
+export PATH PS1 HOME
 
 alias ll="ls -lsa"
 alias vim="vi"
