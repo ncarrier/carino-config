@@ -1,2 +1,3 @@
-none		/proc		proc	defaults
-none /sys sysfs defaults 0 0
+none		/proc	proc	defaults	0	0
+none		/sys	sysfs	defaults	0	0
+/dev/mmcblk0p1	/boot	vfat	defaults	0	0
