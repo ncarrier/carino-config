@@ -1,0 +1,7 @@
+PATH="$PATH:/sbin:/bin:/usr/bin"
+PS1="[\u@\h \W]\\$ "
+
+export PATH PS1
+
+alias ll="ls -lsa"
+alias vim="vi"
