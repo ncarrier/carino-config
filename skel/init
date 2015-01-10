@@ -1,0 +1,9 @@
+#!/bin/sh
+
+mount -a
+
+while [ 1 ]; do
+	/bin/sh -l
+	sleep 1
+	echo shell killed, restart
+done
