@@ -12,5 +12,5 @@ PACKAGES_DIR=${PWD}/packages
 BUILD_SCRIPTS_DIR=${PWD}/build_scripts
 
 # toolchain related information
-TOOLCHAIN_PREFIX=arm-linux-gnueabihf-
+TOOLCHAIN_PREFIX=arm-linux-gnueabihf
 LIBC_DIR=/usr/arm-linux-gnueabihf/lib/
