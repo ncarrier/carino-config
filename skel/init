@@ -1,5 +1,8 @@
 #!/bin/sh
 
+set -x
+set -e
+
 mount -a
 
 hostname carino
