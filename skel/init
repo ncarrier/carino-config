@@ -5,6 +5,8 @@ set -e
 
 mount -a
 
+mkdir -p /tmp/lib/misc
+
 hostname carino
 
 # launch all the background persistant services
