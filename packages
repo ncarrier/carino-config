@@ -1,0 +1,9 @@
+libc
+linux
+u-boot
+busybox
+openssl
+libnl
+hostapd
+tests_gpio
+tree
