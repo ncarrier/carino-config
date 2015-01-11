@@ -4,6 +4,12 @@ mount -a
 
 hostname carino
 
+# launch all the background persistant services
+for svc in /etc/services.d/*.svc; do
+	${svc} &
+done
+
+# guarantee that a shell is always running
 while [ 1 ]; do
 	/bin/sh -l
 	sleep 1
