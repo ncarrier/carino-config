@@ -5,7 +5,10 @@ busybox
 openssl
 libnl
 hostapd
-tests_gpio
+
 tree
 gdbserver
 strace
+adbd
+
+tests_gpio
