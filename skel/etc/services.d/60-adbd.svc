@@ -1,6 +1,0 @@
-#!/bin/sh
-
-while [ 1 ]; do
-	/sbin/adbd
-	sleep 1
-done

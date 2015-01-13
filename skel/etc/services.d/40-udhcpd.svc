@@ -1,6 +1,0 @@
-#!/bin/sh
-
-while [ 1 ]; do
-	/sbin/udhcpd -f /etc/udhcpd.conf
-	sleep 1
-done

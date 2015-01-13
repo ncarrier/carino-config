@@ -1,6 +1,0 @@
-#!/bin/sh
-
-while [ 1 ]; do
-	/sbin/telnetd -F -l sh
-	sleep 1
-done
