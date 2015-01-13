@@ -1,5 +1,5 @@
-none		/proc	proc	defaults	0	0
-none		/sys	sysfs	defaults	0	0
-/dev/mmcblk0p1	/boot	vfat	ro		0	0
-none		/tmp	tmpfs	size=20m	0	0
+proc		/proc		proc	defaults	0	0
+sysfs		/sys		sysfs	defaults	0	0
+/dev/mmcblk0p1	/boot		vfat	ro		0	0
+tmpfs		/tmp		tmpfs	size=20m	0	0
 
