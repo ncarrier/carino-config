@@ -10,8 +10,3 @@ mount devpts /dev/pts -t devpts
 
 hostname carino
 
-# launch all the background persistant ore oneshot services
-for svc in /etc/services.d/*.svc; do
-	${svc} &
-done
-
