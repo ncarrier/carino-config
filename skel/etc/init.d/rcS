@@ -10,3 +10,4 @@ mount devpts /dev/pts -t devpts
 
 hostname carino
 
+echo /bin/config_network > /proc/sys/kernel/hotplug

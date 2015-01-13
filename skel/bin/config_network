@@ -1,0 +1,21 @@
+#!/bin/sh
+
+exec > /dev/console 2>&1
+
+if [ "${SUBSYSTEM}" != "net" ]; then
+        exit 0
+fi
+
+if [ "${ACTION}" != 'add' ]; then
+        exit 0
+fi
+
+set -x
+
+/sbin/ip link set wlan0 up
+/sbin/ip address add 10.10.10.1/24 dev wlan0
+
+# restart services depending on the interface being configured
+killall udhcpd
+killall hostapd
+
