@@ -1,0 +1,19 @@
+#!/bin/sh
+
+set -x
+set -e
+
+mount -a
+
+mkdir -p /tmp/lib/misc
+mkdir -p /dev/pts
+
+mount devpts /dev/pts -t devpts
+
+hostname carino
+
+# launch all the background persistant ore oneshot services
+for svc in /etc/services.d/*.svc; do
+	${svc} &
+done
+
