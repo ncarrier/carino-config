@@ -3,8 +3,6 @@
 set -x
 set -e
 
-mount -a
-
 mkdir -p /tmp/lib/misc
 mkdir -p /dev/pts
 
