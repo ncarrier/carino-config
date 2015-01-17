@@ -4,6 +4,7 @@ set -x
 set -e
 
 mkdir -p /tmp/lib/misc
+touch /tmp/lib/misc/udhcpd.leases
 mkdir -p /dev/pts
 
 mount devpts /dev/pts -t devpts
