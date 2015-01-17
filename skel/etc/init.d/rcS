@@ -8,8 +8,6 @@ mkdir -p /dev/pts
 
 mount devpts /dev/pts -t devpts
 
-hostname carino
-
 echo /bin/config_network > /proc/sys/kernel/hotplug
 
 /usr/bin/tests_gpio 13 > /dev/null &
