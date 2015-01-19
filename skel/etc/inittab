@@ -2,9 +2,10 @@
 ::sysinit:/etc/init.d/rcS
 
 ::respawn:-/bin/sh
-::respawn:/sbin/udhcpd -f /etc/udhcpd.conf
-::respawn:/sbin/hostapd /etc/hostapd.conf
+::respawn:/sbin/syslogd -nK
+/dev/null::respawn:/sbin/hostapd /etc/hostapd.conf
 /dev/kmsg::respawn:/sbin/adbd
+/dev/null::respawn:/sbin/udhcpd -f /etc/udhcpd.conf -S
 
 ::restart:/sbin/init
 
