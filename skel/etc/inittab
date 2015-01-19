@@ -4,7 +4,7 @@
 ::respawn:-/bin/sh
 ::respawn:/sbin/udhcpd -f /etc/udhcpd.conf
 ::respawn:/sbin/hostapd /etc/hostapd.conf
-::respawn:/sbin/adbd
+/dev/kmsg::respawn:/sbin/adbd
 
 ::restart:/sbin/init
 

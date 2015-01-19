@@ -1,6 +1,6 @@
 #!/bin/sh
 
-exec > /dev/console 2>&1
+exec > /dev/kmsg 2>&1
 
 if [ "${SUBSYSTEM}" != "net" ]; then
         exit 0
