@@ -1,6 +1,5 @@
 #!/bin/sh
 
-set -x
 set -e
 
 mkdir -p /tmp/lib/misc
