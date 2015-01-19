@@ -16,6 +16,9 @@ set -x
 /sbin/ip address add 10.10.10.1/24 dev wlan0
 
 # restart services depending on the interface being configured
+# udhcpd doesn't handle well being launched with a non-existant interface, so
+# we have to kill it if it was launched before wlan0 was up and configured
+# hostapd moans when wlan0 isn't there, but hanlde well it's late apparition
 killall udhcpd
-killall hostapd
+#killall hostapd
 
