@@ -11,4 +11,8 @@ gdbserver
 strace
 adbd
 
+zlib
+libffi
+glib
+gstreamer
 tests_gpio
