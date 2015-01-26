@@ -14,3 +14,7 @@ BUILD_SCRIPTS_DIR=${PWD}/build_scripts
 # toolchain related information
 TOOLCHAIN_PREFIX=arm-linux-gnueabihf
 LIBC_DIR=/usr/arm-linux-gnueabihf/lib/
+
+# in MB, for sd image. rootfs size will be IMAGE_SIZE - BOOT_PARTITION_SIZE
+IMAGE_SIZE=60
+BOOT_PARTITION_SIZE=20
