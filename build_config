@@ -6,6 +6,7 @@ STAGING_HOST_DIR=${OUT_DIR}/staging.host
 FINAL_DIR=${OUT_DIR}/final
 BOOT_DIR=${OUT_DIR}/boot
 U_BOOT_DIR=${OUT_DIR}/u-boot
+PKG_CONFIG_PATH=${STAGING_DIR}/lib/pkgconfig/
 
 # source directories
 CONFIG_DIR=${PWD}/config
@@ -15,7 +16,19 @@ BUILD_SCRIPTS_DIR=${PWD}/build_scripts
 # toolchain related information
 TOOLCHAIN_PREFIX=arm-linux-gnueabihf
 LIBC_DIR=/usr/arm-linux-gnueabihf/lib/
+CC=arm-linux-gnueabihf-gcc
+AS=arm-linux-gnueabihf-as
 
 # in MB, for sd image. rootfs size will be IMAGE_SIZE - BOOT_PARTITION_SIZE
 IMAGE_SIZE=60
 BOOT_PARTITION_SIZE=20
+
+# base flags, modules must append their own flags
+CPPFLAGS="-O0"
+#CPPFLAGS="-O2"
+CPPFLAGS="${CPPFLAGS} -I${STAGING_DIR}/include/ -g"
+LDFLAGS="-L${STAGING_DIR}/lib/ -Wl,-rpath-link=${STAGING_DIR}/lib"
+# choose optimisation level by uncommenting the right line
+
+# add path to host tools built
+PATH="${STAGING_HOST_DIR}/bin/:${PATH}"
