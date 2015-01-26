@@ -2,6 +2,7 @@
 OUT_DIR=${PWD}/out
 BUILD_DIR=${OUT_DIR}/build
 STAGING_DIR=${OUT_DIR}/staging
+STAGING_HOST_DIR=${OUT_DIR}/staging.host
 FINAL_DIR=${OUT_DIR}/final
 BOOT_DIR=${OUT_DIR}/boot
 U_BOOT_DIR=${OUT_DIR}/u-boot
