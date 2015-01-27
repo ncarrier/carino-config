@@ -23,12 +23,21 @@ CROSS_AS=${TOOLCHAIN_PREFIX}-as
 IMAGE_SIZE=60
 BOOT_PARTITION_SIZE=20
 
-# base flags, modules must append their own flags
-CPPFLAGS="-O0"
-#CPPFLAGS="-O2"
-CPPFLAGS="${CPPFLAGS} -I${STAGING_DIR}/include/ -g"
-LDFLAGS="-L${STAGING_DIR}/lib/ -Wl,-rpath-link=${STAGING_DIR}/lib"
+# base flags for cross-compilation, passed in CFLAGS to the modules, which must
+# then append their own flags
 # choose optimisation level by uncommenting the right line
+CROSS_CFLAGS="-O0 -g"
+#CROSS_CFLAGS="-O2"
+CROSS_CPPFLAGS="-I${STAGING_DIR}/include/"
+CROSS_LDFLAGS="-L${STAGING_DIR}/lib/ -Wl,-rpath-link=${STAGING_DIR}/lib"
+
+# base flags for host tools compilation, passed in CFLAGS to the modules, which
+# must then append their own flags
+# choose optimisation level by uncommenting the right line
+#HOST_CFLAGS="-O0 -g"
+HOST_CFLAGS="-O2"
+HOST_CPPFLAGS="-I${STAGING_HOST_DIR}/include/"
+HOST_LDFLAGS="-L${STAGING_HOST_DIR}/lib/ -Wl,-rpath-link=${STAGING_HOST_DIR}/lib"
 
 # add path to host tools built
 PATH="${STAGING_HOST_DIR}/bin/:${PATH}"
