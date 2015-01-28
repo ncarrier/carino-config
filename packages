@@ -18,4 +18,8 @@ libffi.host
 glib.host
 glib
 gstreamer
+
+libarduino
 tests_gpio
+tests_pwm
+tests_servo
