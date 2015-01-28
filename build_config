@@ -1,21 +1,21 @@
 # directories holding produced files, which can be removed safely
-OUT_DIR=${PWD}/out
-BUILD_DIR=${OUT_DIR}/build
-STAGING_DIR=${OUT_DIR}/staging
-STAGING_HOST_DIR=${OUT_DIR}/staging.host
-FINAL_DIR=${OUT_DIR}/final
-BOOT_DIR=${OUT_DIR}/boot
-U_BOOT_DIR=${OUT_DIR}/u-boot
+export OUT_DIR=${PWD}/out
+export BUILD_DIR=${OUT_DIR}/build
+export STAGING_DIR=${OUT_DIR}/staging
+export STAGING_HOST_DIR=${OUT_DIR}/staging.host
+export FINAL_DIR=${OUT_DIR}/final
+export BOOT_DIR=${OUT_DIR}/boot
+export U_BOOT_DIR=${OUT_DIR}/u-boot
 PKG_CONFIG_PATH=${STAGING_DIR}/lib/pkgconfig/
 
 # source directories
-CONFIG_DIR=${PWD}/config
-PACKAGES_DIR=${PWD}/packages
-BUILD_SCRIPTS_DIR=${PWD}/build_scripts
+export CONFIG_DIR=${PWD}/config
+export PACKAGES_DIR=${PWD}/packages
+export BUILD_SCRIPTS_DIR=${PWD}/build_scripts
 
 # toolchain related information
-TOOLCHAIN_PREFIX=arm-linux-gnueabihf
-LIBC_DIR=/usr/arm-linux-gnueabihf/lib/
+export TOOLCHAIN_PREFIX=arm-linux-gnueabihf
+export LIBC_DIR=/usr/arm-linux-gnueabihf/lib/
 CROSS_CC="ccache ${TOOLCHAIN_PREFIX}-gcc"
 CROSS_AS=${TOOLCHAIN_PREFIX}-as
 
@@ -41,4 +41,4 @@ HOST_CPPFLAGS="-I${STAGING_HOST_DIR}/include/"
 HOST_LDFLAGS="-L${STAGING_HOST_DIR}/lib/ -Wl,-rpath-link=${STAGING_HOST_DIR}/lib"
 
 # add path to host tools built
-PATH="${STAGING_HOST_DIR}/bin/:${PATH}"
+export PATH="${STAGING_HOST_DIR}/bin/:${PATH}"
