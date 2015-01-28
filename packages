@@ -13,6 +13,9 @@ adbd
 
 zlib
 libffi
+zlib.host
+libffi.host
+glib.host
 glib
 gstreamer
 tests_gpio
