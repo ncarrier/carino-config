@@ -13,10 +13,13 @@ export CONFIG_DIR=${PWD}/config
 export PACKAGES_DIR=${PWD}/packages
 export BUILD_SCRIPTS_DIR=${PWD}/build_scripts
 
+# set to an empty string to disable ccache for both target and host builds
+CCACHE=ccache
+
 # toolchain related information
 export TOOLCHAIN_PREFIX=arm-linux-gnueabihf
 export LIBC_DIR=/usr/arm-linux-gnueabihf/lib/
-CROSS_CC="ccache ${TOOLCHAIN_PREFIX}-gcc"
+CROSS_CC="${CCACHE} ${TOOLCHAIN_PREFIX}-gcc"
 CROSS_AS=${TOOLCHAIN_PREFIX}-as
 
 # in MB, for sd image. rootfs size will be IMAGE_SIZE - BOOT_PARTITION_SIZE
