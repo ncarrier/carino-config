@@ -23,8 +23,8 @@ CROSS_CC="${CCACHE} ${TOOLCHAIN_PREFIX}-gcc"
 CROSS_AS=${TOOLCHAIN_PREFIX}-as
 
 # in MB, for sd image. rootfs size will be IMAGE_SIZE - BOOT_PARTITION_SIZE
-IMAGE_SIZE=60
-BOOT_PARTITION_SIZE=20
+IMAGE_SIZE=70
+BOOT_PARTITION_SIZE=10
 
 # base flags for cross-compilation, passed in CFLAGS to the modules, which must
 # then append their own flags
