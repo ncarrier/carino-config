@@ -18,6 +18,7 @@ libffi.host
 glib.host
 glib
 gstreamer
+gst-plugins-base
 
 libarduino
 tests_gpio
