@@ -6,7 +6,6 @@ export STAGING_HOST_DIR=${OUT_DIR}/staging.host
 export FINAL_DIR=${OUT_DIR}/final
 export BOOT_DIR=${OUT_DIR}/boot
 export U_BOOT_DIR=${OUT_DIR}/u-boot
-PKG_CONFIG_PATH=${STAGING_DIR}/lib/pkgconfig/
 
 # source directories
 export CONFIG_DIR=${PWD}/config
@@ -21,6 +20,7 @@ export TOOLCHAIN_PREFIX=arm-linux-gnueabihf
 export LIBC_DIR=/usr/arm-linux-gnueabihf/lib/
 CROSS_CC="${CCACHE} ${TOOLCHAIN_PREFIX}-gcc"
 CROSS_AS=${TOOLCHAIN_PREFIX}-as
+CROSS_PKG_CONFIG_PATH=${STAGING_DIR}/lib/pkgconfig/
 
 # in MB, for sd image. rootfs size will be IMAGE_SIZE - BOOT_PARTITION_SIZE
 IMAGE_SIZE=70
