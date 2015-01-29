@@ -29,8 +29,12 @@ BOOT_PARTITION_SIZE=10
 # base flags for cross-compilation, passed in CFLAGS to the modules, which must
 # then append their own flags
 # choose optimisation level by uncommenting the right line
-CROSS_CFLAGS="-O0 -g"
-#CROSS_CFLAGS="-O2"
+if [ "${CARINO_VERSION_TYPE}" = "release" ]; then
+	CROSS_CFLAGS="-Os" # -Os or O2 ?
+else
+	# debug version
+	CROSS_CFLAGS="-O0 -g"
+fi
 CROSS_CPPFLAGS="-I${STAGING_DIR}/include/"
 CROSS_LDFLAGS="-L${STAGING_DIR}/lib/ -Wl,-rpath-link=${STAGING_DIR}/lib"
 
