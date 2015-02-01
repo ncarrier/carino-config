@@ -1,8 +1,10 @@
 PATH="$PATH:/sbin:/bin:/usr/bin"
 PS1="[\u@\h \W]\\$ "
 HOME=/
+GST_PLUGIN_PATH='/lib/gstreamer-1.0'
+GST_PLUGIN_SCANNER='/libexec/gstreamer-1.0/gst-plugin-scanner'
 
-export PATH PS1 HOME
+export PATH PS1 HOME GST_PLUGIN_PATH GST_PLUGIN_SCANNER
 
 alias ll="ls -lsa"
 alias vim="vi"
