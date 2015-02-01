@@ -22,6 +22,7 @@ libogg
 libvorbis
 libtheora
 gst-plugins-base
+gst-plugins-good
 
 libarduino
 tests_gpio
