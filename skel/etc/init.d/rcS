@@ -8,4 +8,7 @@ mkdir -p /dev/pts
 
 mount devpts /dev/pts -t devpts
 
+/sbin/ip address add 127.0.0.1/8 scope host dev lo
+/sbin/ip link set up lo
+
 /usr/bin/tests_gpio 13 > /dev/null &
