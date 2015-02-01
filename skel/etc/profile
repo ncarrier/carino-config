@@ -1,5 +1,5 @@
 PATH="$PATH:/sbin:/bin:/usr/bin"
-PS1="[\u@\h \W]\\$ "
+PS1='$(resize > /dev/null)\u@\h:\w \\$ '
 HOME=/
 GST_PLUGIN_PATH='/lib/gstreamer-1.0'
 GST_PLUGIN_SCANNER='/libexec/gstreamer-1.0/gst-plugin-scanner'
