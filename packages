@@ -18,6 +18,9 @@ libffi.host
 glib.host
 glib
 gstreamer
+libogg
+libvorbis
+libtheora
 gst-plugins-base
 
 libarduino
