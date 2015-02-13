@@ -19,6 +19,7 @@ CCACHE=ccache
 export TOOLCHAIN_PREFIX=arm-linux-gnueabihf
 export LIBC_DIR=/usr/arm-linux-gnueabihf/lib/
 CROSS_CC="${CCACHE} ${TOOLCHAIN_PREFIX}-gcc"
+CROSS_CXX="${CCACHE} ${TOOLCHAIN_PREFIX}-g++"
 CROSS_AS=${TOOLCHAIN_PREFIX}-as
 CROSS_PKG_CONFIG_PATH=${STAGING_DIR}/lib/pkgconfig/
 
