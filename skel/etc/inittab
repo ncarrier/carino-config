@@ -1,7 +1,7 @@
 ::sysinit:/bin/mount -a
 ::sysinit:/etc/init.d/rcS
 
-::respawn:-/bin/sh
+::askfirst:-/bin/sh
 ::respawn:/sbin/syslogd -nK
 /dev/null::respawn:/sbin/hostapd /etc/hostapd.conf
 /dev/kmsg::respawn:/sbin/adbd
