@@ -1,5 +1,7 @@
 #!/bin/sh
 
+itf=wlan0
+
 exec > /dev/kmsg 2>&1
 
 if [ "${SUBSYSTEM}" != "net" ] || [ "${ACTION}" != 'add' ]; then
@@ -8,15 +10,15 @@ fi
 
 # for an unknown reason, set -x issues empty lines when redirected to kmsg,
 # hence the echoes
-echo /sbin/ip link set wlan0 up
-/sbin/ip link set wlan0 up
-echo /sbin/ip address add 10.10.10.1/24 brd 10.10.10.255 dev wlan0
-/sbin/ip address add 10.10.10.1/24 brd 10.10.10.255 dev wlan0
+echo /sbin/ip link set ${itf} up
+/sbin/ip link set ${itf} up
+echo /sbin/ip address add 10.10.10.1/24 brd 10.10.10.255 dev ${itf}
+/sbin/ip address add 10.10.10.1/24 brd 10.10.10.255 dev ${itf}
 
 # restart services depending on the interface being configured
 # udhcpd doesn't handle well being launched with a non-existant interface, so
-# we have to kill it if it was launched before wlan0 was up and configured
-# hostapd moans when wlan0 isn't there, but hanlde well it's late apparition
+# we have to kill it if it was launched before ${itf} was up and configured
+# hostapd moans when ${itf} isn't there, but hanlde well it's late apparition
 echo killall udhcpd
 killall udhcpd
 #killall hostapd
