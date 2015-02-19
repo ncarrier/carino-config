@@ -4,8 +4,8 @@ itf=wlan0
 
 exec > /dev/kmsg 2>&1
 
-if [ "${SUBSYSTEM}" != "net" ] || [ "${ACTION}" != 'add' ]; then
-        exit 0
+if [ "${SUBSYSTEM}" != "net" ] || [ "${ACTION}" != "add" ] || [ "${INTERFACE}" != "${itf}" ]; then
+	exit 0
 fi
 
 # for an unknown reason, set -x issues empty lines when redirected to kmsg,
