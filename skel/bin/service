@@ -1,0 +1,49 @@
+#!/bin/sh
+
+#set -x
+
+usage() {
+	echo "usage :
+	restart service_executable_full_path
+	stop service_executable_full_path"
+}
+
+if [ "$#" -ne 1 ]; then
+	usage
+	exit 1
+fi
+
+services_dir=/etc/services/
+
+action=$0
+path=$1
+service=$(basename ${path})
+
+if [ ! -e "${path}" ]; then
+	echo "no such service ${service}"
+	usage
+	exit 1
+fi
+
+mkdir -p ${services_dir}
+
+if expr "${action}" : '.*restart$' > /dev/null; then
+	echo "restart service ${service}"
+	if [ -e "${services_dir}${service}" ]; then
+		mv ${services_dir}${service} ${path}
+	fi
+	killall ${service}
+elif expr "${action}" : '.*stop$' > /dev/null; then
+	if expr "$(readlink ${path})" : '.*fake_service$' > /dev/null; then
+		echo "service ${path} ins't running"
+		exit 0
+	fi
+	echo "stop service" $*
+	mv ${path} ${services_dir}
+	ln -s /bin/fake_service ${path}
+	killall ${service}
+else
+	echo "wrong service command invocation"
+	usage
+fi
+

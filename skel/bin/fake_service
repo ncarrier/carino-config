@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# sleep for a whole day, this should be sufficient
+sleep 86400
