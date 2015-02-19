@@ -16,4 +16,17 @@ if [ -e "/sys/class/net/wlan0" ]; then
 	SUBSYSTEM="net" ACTION="add" INTERFACE="wlan0" /bin/config_network
 fi
 
-/usr/bin/tests_gpio 13 > /dev/null &
+# make the led on pin 13 blink
+(
+	/bin/tests_gpio high
+	sleep 1
+	/bin/tests_gpio low
+	sleep 1
+	/bin/tests_gpio high
+	sleep 1
+	/bin/tests_gpio low
+	sleep 1
+	/bin/tests_gpio high
+	sleep 1
+	/bin/tests_gpio low
+) &
