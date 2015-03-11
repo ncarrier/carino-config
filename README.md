@@ -14,7 +14,7 @@ Defines the values of the variables needed by the carino build system.
 ### busybox\_config
 
 Build time configuration for the busybox package. Please refer to
-build\_scripts/busybox.carbuild for instructions on how to update this file.
+build\_scripts/busybox.build for instructions on how to update this file.
 
 ### firmware/rtlwifi/rtl8192cufw\_TMSC.bin
 
