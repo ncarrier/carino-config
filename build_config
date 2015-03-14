@@ -1,5 +1,17 @@
+# if any logic must be added in this file, it _must_ be reduced to the minimum
+# in any case, this script must stay idempotent, for a given PWD
+
 # directories holding produced files, which can be removed safely
-export OUT_DIR=${PWD}/out
+if [ "${CARINO_VERSION_TYPE}" = "release" ]; then
+	# the release script must start from a clean state and thus removes all
+	# the artifacts of previous builds, we don't wan't to force a dev to
+	# rebuild all if he wants to resume developing after having issued a
+	# release
+	export OUT_DIR=${PWD}/out-release
+else
+	# debug version
+	export OUT_DIR=${PWD}/out
+fi
 export BUILD_DIR=${OUT_DIR}/build
 export STAGING_DIR=${OUT_DIR}/staging
 export STAGING_HOST_DIR=${OUT_DIR}/staging.host
