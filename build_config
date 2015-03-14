@@ -24,6 +24,9 @@ export CONFIG_DIR=${PWD}/config
 export PACKAGES_DIR=${PWD}/packages
 export BUILD_SCRIPTS_DIR=${PWD}/build_scripts
 
+# used only when releasing a version
+export VERSIONS_DIR=versions
+
 # set to an empty string to disable ccache for both target and host builds
 CCACHE=ccache
 
