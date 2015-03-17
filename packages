@@ -31,3 +31,5 @@ car
 tests_gpio
 tests_pwm
 tests_servo
+
+web_stew
