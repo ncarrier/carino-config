@@ -63,5 +63,8 @@ HOST_CFLAGS="-O2"
 HOST_CPPFLAGS="-I${STAGING_HOST_DIR}/include/"
 HOST_LDFLAGS="-L${STAGING_HOST_DIR}/lib/ -Wl,-rpath-link=${STAGING_HOST_DIR}/lib"
 
+# for building the android application(s)
+export JAVA_HOME="/usr/lib/jvm/java-7-openjdk-amd64"
+
 # add path to host tools built
 export PATH="${STAGING_HOST_DIR}/bin/:${PATH}"
