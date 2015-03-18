@@ -65,6 +65,7 @@ HOST_LDFLAGS="-L${STAGING_HOST_DIR}/lib/ -Wl,-rpath-link=${STAGING_HOST_DIR}/lib
 
 # for building the android application(s)
 export JAVA_HOME="/usr/lib/jvm/java-7-openjdk-amd64"
+export ANDROID_SDK="/home/nicolas/Logiciels/adt-bundle-linux-x86_64-20130729/sdk/"
 
 # add path to host tools built
 export PATH="${STAGING_HOST_DIR}/bin/:${PATH}"
