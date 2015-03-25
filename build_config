@@ -37,6 +37,7 @@ CROSS_CC="${CCACHE} ${TOOLCHAIN_PREFIX}-gcc"
 CROSS_CXX="${CCACHE} ${TOOLCHAIN_PREFIX}-g++"
 CROSS_AS=${TOOLCHAIN_PREFIX}-as
 CROSS_PKG_CONFIG_PATH=${STAGING_DIR}/lib/pkgconfig/
+CROSS_PKG_CONFIG=${TOOLCHAIN_PREFIX}-pkg-config
 
 # in MB, for sd image. rootfs size will be IMAGE_SIZE - BOOT_PARTITION_SIZE
 IMAGE_SIZE=70
@@ -62,6 +63,7 @@ HOST_PKG_CONFIG_PATH=${STAGING_HOST_DIR}/lib/pkgconfig
 HOST_CFLAGS="-O2"
 HOST_CPPFLAGS="-I${STAGING_HOST_DIR}/include/"
 HOST_LDFLAGS="-L${STAGING_HOST_DIR}/lib/ -Wl,-rpath-link=${STAGING_HOST_DIR}/lib"
+HOST_PKG_CONFIG=pkg-config
 
 # for building the android application(s)
 export JAVA_HOME="/usr/lib/jvm/java-7-openjdk-amd64"
