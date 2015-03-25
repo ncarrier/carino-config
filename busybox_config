@@ -1,7 +1,7 @@
 #
 # Automatically generated make config: don't edit
 # Busybox version: 1.23.0
-# Sat Jan 10 21:32:22 2015
+# Wed Mar 25 17:54:18 2015
 #
 CONFIG_HAVE_DOT_CONFIG=y
 
@@ -76,7 +76,7 @@ CONFIG_EXTRA_LDLIBS=""
 CONFIG_DEBUG=y
 CONFIG_DEBUG_PESSIMIZE=y
 CONFIG_UNIT_TEST=y
-CONFIG_WERROR=y
+# CONFIG_WERROR is not set
 CONFIG_NO_DEBUG_LIB=y
 # CONFIG_DMALLOC is not set
 # CONFIG_EFENCE is not set
