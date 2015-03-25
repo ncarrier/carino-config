@@ -13,10 +13,10 @@ if [ "${CARINO_VERSION_TYPE}" = "release" ]; then
 	# the artifacts of previous builds, we don't wan't to force a dev to
 	# rebuild all if he wants to resume developing after having issued a
 	# release
-	export OUT_DIR=${PWD}/out-release
+	export OUT_DIR=${PWD}/out/${CARINO_VEHICLE}-release
 else
 	# debug version
-	export OUT_DIR=${PWD}/out
+	export OUT_DIR=${PWD}/out/${CARINO_VEHICLE}-debug
 fi
 export BUILD_DIR=${OUT_DIR}/build
 export STAGING_DIR=${OUT_DIR}/staging
