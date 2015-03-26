@@ -4,6 +4,13 @@
 # which vehicle are we building ? defaulting to "obstination"
 CARINO_VEHICLE=${CARINO_VEHICLE:-obstination}
 
+export CONFIG_DIR=${PWD}/config
+
+vehicle_config_file=${CONFIG_DIR}/${CARINO_VEHICLE}/build_config
+if [ -f "${vehicle_config_file}" ]; then
+	. ${vehicle_config_file}
+fi
+
 # directories holding produced files, which can be removed safely
 if [ "${CARINO_VERSION_TYPE}" = "release" ]; then
 	# the release script must start from a clean state and thus removes all
@@ -23,7 +30,6 @@ export BOOT_DIR=${OUT_DIR}/boot
 export U_BOOT_DIR=${OUT_DIR}/u-boot
 
 # source directories
-export CONFIG_DIR=${PWD}/config
 export PACKAGES_DIR=${PWD}/packages
 export BUILD_SCRIPTS_DIR=${PWD}/build_scripts
 
@@ -32,17 +38,6 @@ export VERSIONS_DIR=versions
 
 # set to an empty string to disable ccache for both target and host builds
 CCACHE=ccache
-
-# toolchain related information
-export TOOLCHAIN_PREFIX=arm-linux-gnueabihf
-export LIBC_DIR=/usr/arm-linux-gnueabihf/lib/
-CROSS_CC="${CCACHE} ${TOOLCHAIN_PREFIX}-gcc"
-CROSS_CXX="${CCACHE} ${TOOLCHAIN_PREFIX}-g++"
-CROSS_AR=${TOOLCHAIN_PREFIX}-ar
-CROSS_AS=${TOOLCHAIN_PREFIX}-as
-CROSS_LD=${TOOLCHAIN_PREFIX}-ld
-CROSS_PKG_CONFIG_PATH=${STAGING_DIR}/lib/pkgconfig/
-CROSS_PKG_CONFIG=${TOOLCHAIN_PREFIX}-pkg-config
 
 # in MB, for sd image. rootfs size will be IMAGE_SIZE - BOOT_PARTITION_SIZE
 IMAGE_SIZE=70
