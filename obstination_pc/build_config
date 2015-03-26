@@ -1,0 +1,11 @@
+# toolchain related information
+#export TOOLCHAIN_PREFIX=arm-linux-gnueabihf
+export LIBC_DIR=/lib/
+CROSS_CC="${CCACHE} gcc"
+CROSS_CXX="${CCACHE} g++"
+CROSS_AR=ar
+CROSS_AS=as
+CROSS_LD=ld
+CROSS_PKG_CONFIG_PATH=${STAGING_DIR}/lib/pkgconfig/
+CROSS_PKG_CONFIG=pkg-config
+
