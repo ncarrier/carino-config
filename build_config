@@ -1,11 +1,8 @@
 # if any logic must be added in this file, it _must_ be reduced to the minimum
 # in any case, this script must stay idempotent, for a given PWD
 
-if [ -f current_vehicle ]; then
-	CARINO_VEHICLE=$(cat current_vehicle)
-else
-	CARINO_VEHICLE=obstination
-fi
+# which vehicle are we building ? defaulting to "obstination"
+CARINO_VEHICLE=${CARINO_VEHICLE:-obstination}
 
 # directories holding produced files, which can be removed safely
 if [ "${CARINO_VERSION_TYPE}" = "release" ]; then
