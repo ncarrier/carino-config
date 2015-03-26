@@ -6,6 +6,10 @@ CARINO_VEHICLE=${CARINO_VEHICLE:-obstination}
 
 export CONFIG_DIR=${PWD}/config
 
+# set to an empty string to disable ccache for both target and host builds
+# referenced in ${vehicle_config_file}, so must be defined before
+CCACHE=ccache
+
 vehicle_config_file=${CONFIG_DIR}/${CARINO_VEHICLE}/build_config
 if [ -f "${vehicle_config_file}" ]; then
 	. ${vehicle_config_file}
@@ -35,9 +39,6 @@ export BUILD_SCRIPTS_DIR=${PWD}/build_scripts
 
 # used only when releasing a version
 export VERSIONS_DIR=versions
-
-# set to an empty string to disable ccache for both target and host builds
-CCACHE=ccache
 
 # in MB, for sd image. rootfs size will be IMAGE_SIZE - BOOT_PARTITION_SIZE
 IMAGE_SIZE=70
