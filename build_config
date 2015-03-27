@@ -4,6 +4,8 @@
 # which vehicle are we building ? defaulting to "obstination"
 CARINO_VEHICLE=${CARINO_VEHICLE:-obstination}
 
+WORKSPACE_DIR=${PWD}
+
 export CONFIG_DIR=${PWD}/config
 
 # set to an empty string to disable ccache for both target and host builds
