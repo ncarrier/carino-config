@@ -1,5 +1,6 @@
 # toolchain related information
-#export TOOLCHAIN_PREFIX=arm-linux-gnueabihf
+# TOOLCHAIN_PREFIX _mustn't_ be defined, some module rely on it
+#export TOOLCHAIN_PREFIX=
 export LIBC_DIR=/lib/
 CROSS_CC="${CCACHE} gcc"
 CROSS_CXX="${CCACHE} g++"
@@ -9,3 +10,5 @@ CROSS_LD=ld
 CROSS_PKG_CONFIG_PATH=${STAGING_DIR}/lib/pkgconfig/
 CROSS_PKG_CONFIG=${WORKSPACE_DIR}/tools/wrapped-pkg-config
 
+KERNEL_EXTRA_ENV="CFLAGS= LDFLAGS= ARCH=um"
+KERNEL_TARGETS="oldconfig linux modules modules_install"
