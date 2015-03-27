@@ -12,6 +12,12 @@ export CONFIG_DIR=${PWD}/config
 # referenced in ${vehicle_config_file}, so must be defined before
 CCACHE=ccache
 
+vehicle_config_dir=${CONFIG_DIR}/${CARINO_VEHICLE}
+if [ ! -d "${vehicle_config_dir}" ]; then
+	echo "*** ERROR ***: vehicle ${CARINO_VEHICLE} doesn't exist in config/"
+	exit 1
+fi
+
 vehicle_config_file=${CONFIG_DIR}/${CARINO_VEHICLE}/build_config
 if [ -f "${vehicle_config_file}" ]; then
 	. ${vehicle_config_file}
