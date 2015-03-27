@@ -7,5 +7,5 @@ CROSS_AR=ar
 CROSS_AS=as
 CROSS_LD=ld
 CROSS_PKG_CONFIG_PATH=${STAGING_DIR}/lib/pkgconfig/
-CROSS_PKG_CONFIG=pkg-config
+CROSS_PKG_CONFIG=${WORKSPACE_DIR}/tools/wrapped-pkg-config
 
