@@ -9,6 +9,7 @@ CROSS_AS=as
 CROSS_LD=ld
 CROSS_PKG_CONFIG_PATH=${STAGING_DIR}/lib/pkgconfig/
 CROSS_PKG_CONFIG=${WORKSPACE_DIR}/tools/wrapped-pkg-config
+CROSS_STRIP=strip
 
 KERNEL_EXTRA_ENV="CFLAGS= LDFLAGS= ARCH=um"
 KERNEL_TARGETS="oldconfig linux modules modules_install"
