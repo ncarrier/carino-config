@@ -1,6 +1,5 @@
 libc
 linux
-u-boot
 busybox
 openssl
 libnl
