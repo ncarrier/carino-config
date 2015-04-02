@@ -7,6 +7,7 @@ CARINO_VEHICLE=${CARINO_VEHICLE:-obstination}
 WORKSPACE_DIR=${PWD}
 
 export CONFIG_DIR=${PWD}/config
+export TOOLS_DIR=${WORKSPACE_DIR}/tools
 
 # set to an empty string to disable ccache for both target and host builds
 # referenced in ${vehicle_config_file}, so must be defined before
